@@ -46,6 +46,7 @@ export function getDigipet(): Digipet | null {
  * @param newDigipet The new digipet data; pass `undefined` to effectively remove the digipet
  */
 export function setDigipet(newDigipet?: Digipet | undefined): void {
+  // this function causes a side effect because it modifies a `state` variable outside of its local environment
   // spread to avoid mutation
   _userDigipet = newDigipet ? { ...newDigipet } : undefined;
 }
